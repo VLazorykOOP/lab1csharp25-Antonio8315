@@ -1,6 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
- static void main()
+using System.Security.Cryptography.X509Certificates;
+
+static void main()
  {
     Console.Write("\nInput # of task: ");
     int n = int.Parse(Console.ReadLine()!);
@@ -51,8 +53,23 @@
  {
     Console.Write("Input # of day: ");
     int day = int.Parse(Console.ReadLine()!);
+    Console.Write("Input # of month: ");
+    int month = int.Parse(Console.ReadLine()!);
+    Console.Write("Year visokosnii? (if True - print 1, else 0): ");
+    int year = int.Parse(Console.ReadLine()!);
+    if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12){
+    Console.WriteLine(31-day);
+    }
+    else if (month == 4 || month == 6 || month == 9 || month == 11){
     Console.WriteLine(30-day);
-}
+    }
+    else if (month == 2 && year == 1){
+    Console.WriteLine(29-day);
+    }
+    else{
+    Console.WriteLine(28-day);
+    }
+ }
 
  static void task5()
  {
@@ -73,8 +90,12 @@
     float x = float.Parse(Console.ReadLine()!);
     Console.Write("Input y: ");
     float y = float.Parse(Console.ReadLine()!);
+    if (x == 0 || y == 0){
+    Console.Write("ERROR: x,y != 0");}
+    else{
     float answer = ((1 / (x*y))+(1 / (x*x + 1))) * (x + y);
     Console.Write("Answer: " + answer);
+    }
  }
 
 

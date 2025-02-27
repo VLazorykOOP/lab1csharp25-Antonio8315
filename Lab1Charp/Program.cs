@@ -74,6 +74,7 @@
     Console.Write("Input y: ");
     float y = float.Parse(Console.ReadLine()!);
     float answer = ((1 / (x*y))+(1 / (x*x + 1))) * (x + y);
+  // ? x=-y
     Console.Write("Answer: " + answer);
  }
 

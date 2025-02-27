@@ -94,6 +94,7 @@ static void main()
     Console.Write("ERROR: x,y != 0");}
     else{
     float answer = ((1 / (x*y))+(1 / (x*x + 1))) * (x + y);
+  // ? x=-y
     Console.Write("Answer: " + answer);
     }
  }
